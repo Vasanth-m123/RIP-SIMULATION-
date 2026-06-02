@@ -32,8 +32,8 @@ RIP is one of the simplest routing protocols and is widely used for educational 
 
 | Device | Quantity |
 |---|---|
-| PC | 2 |
-| Switch | 2 |
+| PC | 6 |
+| Switch | 3 |
 | Router | 2 |
 | Copper Straight Through Cable | Multiple |
 | Serial DCE Cable | 1 |
@@ -60,8 +60,9 @@ RIP is one of the simplest routing protocols and is widely used for educational 
 # Theory of RIP
 
 Routing Information Protocol (RIP) is a distance-vector routing protocol that uses hop count to find the best path between networks.
-<img width="937" height="364" alt="image" src="https://github.com/user-attachments/assets/d4e5f365-1fbc-472b-acce-67151dc5c379" />
+Routing Information Protocol (RIP) is one of the oldest dynamic routing protocols used in computer networks. It enables routers to exchange routing information automatically and determine the best path for data transmission. RIP uses hop count as its routing metric, where the path with the lowest number of hops is selected as the optimal route. It is mainly suitable for small and medium-sized networks due to its simplicity and ease of configuration.
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/cd21f809-493e-4ccb-b676-c207b2a29350" />
 
 ## Features of RIP
 
@@ -82,7 +83,8 @@ Routing Information Protocol (RIP) is a distance-vector routing protocol that us
 4. Routers update routing tables using received information.
 5. Best path is selected using minimum hop count.
 6. Data packets are forwarded through the selected path.
-<img width="944" height="265" alt="image" src="https://github.com/user-attachments/assets/218ce497-c0f8-4bb1-922f-817685e8ae13" />
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/a8ac6a5b-b7a4-42c6-8d18-977ea8382e0e" />
 
 ---
 
@@ -91,8 +93,6 @@ Routing Information Protocol (RIP) is a distance-vector routing protocol that us
 ## Step 1 — Router Initialization
 
 Each router creates its routing table using directly connected networks.
-<img width="1920" height="1080" alt="Screenshot 2026-06-02 111939" src="https://github.com/user-attachments/assets/a3ef1000-89fb-4ed2-a2ee-3bf30630820b" />
-
 
 ---
 
@@ -138,13 +138,15 @@ Data packets are forwarded between networks successfully.
 
 Launch Cisco Packet Tracer software.
 
+<img width="1920" height="1080" alt="Screenshot 2026-06-02 111939" src="https://github.com/user-attachments/assets/a3ef1000-89fb-4ed2-a2ee-3bf30630820b" />
+
 ---
 
 ## Step 2 — Add Devices
 
 Add:
-- 2 PCs
-- 2 Switches
+- 6 PCs
+- 3 Switches
 - 2 Routers
 
 ---
@@ -176,8 +178,6 @@ IP Address : 192.168.1.2
 Subnet Mask: 255.255.255.0
 Default Gateway: 192.168.1.1
 ```
-<img width="992" height="560" alt="image" src="https://github.com/user-attachments/assets/768e7969-1f29-4d24-be3e-e738424db31b" />
-
 ---
 
 ## PC1
@@ -187,7 +187,6 @@ IP Address : 192.168.2.2
 Subnet Mask: 255.255.255.0
 Default Gateway: 192.168.2.1
 ```
-<img width="992" height="561" alt="image" src="https://github.com/user-attachments/assets/64705dc3-0b53-426f-beac-f978e8741690" />
 
 ---
 
@@ -197,23 +196,12 @@ Default Gateway: 192.168.2.1
 
 ```bash
 enable
-configure terminal
-
-interface fastethernet0/0
-ip address 192.168.1.1 255.255.255.0
-no shutdown
-
-interface serial0/0/0
-ip address 10.0.0.1 255.255.255.252
-clock rate 64000
-no shutdown
-
-router rip
-version 2
-network 192.168.1.0
-network 10.0.0.0
-no auto-summary
+## conf T
+## interface g 0/0
+## IP address 192.168.10.0 255.255.255.0
+## no shut
 ```
+<img width="1920" height="1080" alt="Screenshot 2026-05-02 161320" src="https://github.com/user-attachments/assets/5140c7a7-a693-4925-9ba4-f4fa882ddbf6" />
 
 ---
 
@@ -221,22 +209,15 @@ no auto-summary
 
 ```bash
 enable
-configure terminal
-
-interface fastethernet0/0
-ip address 192.168.2.1 255.255.255.0
-no shutdown
-
-interface serial0/0/0
-ip address 10.0.0.2 255.255.255.252
-no shutdown
-
-router rip
-version 2
-network 192.168.2.0
-network 10.0.0.0
-no auto-summary
+enable
+## conf T
+## interface g 0/1
+## IP address 192.168.10.1 255.255.255.0
+## no shut
+exit
+do show ip int brief 
 ```
+<img width="1920" height="1080" alt="Screenshot 2026-05-02 161344" src="https://github.com/user-attachments/assets/1fc8eef4-c545-4ca7-966e-521906dea958" />
 
 ---
 
@@ -247,6 +228,7 @@ no auto-summary
 ```text
 PC0 → Switch0 → Router0 → Router1 → Switch1 → PC1
 ```
+<img width="937" height="364" alt="image" src="https://github.com/user-attachments/assets/d4e5f365-1fbc-472b-acce-67151dc5c379" />
 
 ---
 
