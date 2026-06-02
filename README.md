@@ -4,7 +4,7 @@
 ### 212223060295
 ### Department of ECE
 
-## Introduction
+# Introduction
 
 Routing Information Protocol (RIP) is a dynamic routing protocol used in computer networks to exchange routing information between routers automatically. RIP helps routers determine the best path for forwarding packets using hop count as the routing metric.
 
@@ -60,6 +60,8 @@ RIP is one of the simplest routing protocols and is widely used for educational 
 # Theory of RIP
 
 Routing Information Protocol (RIP) is a distance-vector routing protocol that uses hop count to find the best path between networks.
+<img width="937" height="364" alt="image" src="https://github.com/user-attachments/assets/d4e5f365-1fbc-472b-acce-67151dc5c379" />
+
 
 ## Features of RIP
 
@@ -80,6 +82,7 @@ Routing Information Protocol (RIP) is a distance-vector routing protocol that us
 4. Routers update routing tables using received information.
 5. Best path is selected using minimum hop count.
 6. Data packets are forwarded through the selected path.
+<img width="944" height="265" alt="image" src="https://github.com/user-attachments/assets/218ce497-c0f8-4bb1-922f-817685e8ae13" />
 
 ---
 
@@ -173,6 +176,7 @@ IP Address : 192.168.1.2
 Subnet Mask: 255.255.255.0
 Default Gateway: 192.168.1.1
 ```
+<img width="992" height="560" alt="image" src="https://github.com/user-attachments/assets/768e7969-1f29-4d24-be3e-e738424db31b" />
 
 ---
 
@@ -183,6 +187,7 @@ IP Address : 192.168.2.2
 Subnet Mask: 255.255.255.0
 Default Gateway: 192.168.2.1
 ```
+<img width="992" height="561" alt="image" src="https://github.com/user-attachments/assets/64705dc3-0b53-426f-beac-f978e8741690" />
 
 ---
 
